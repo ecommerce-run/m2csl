@@ -28,15 +28,13 @@ class CustomerSectionLoadController (
             return availableSections.mapValues {
                 it.value.getSection(sessionId, currentTimestamp)
             }
-        } else {
-            val sessionsSet = sections.split(',').toSet()
-            return availableSections.filterKeys {
-                sessionsSet.contains(it)
-            }.mapValues {
-                it.value.getSection(sessionId, currentTimestamp)
-            }
         }
 
-        return mapOf()
+        val sessionsSet = sections.split(',').toSet()
+        return availableSections.filterKeys {
+            sessionsSet.contains(it)
+        }.mapValues {
+            it.value.getSection(sessionId, currentTimestamp)
+        }
     }
 }

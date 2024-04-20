@@ -1,8 +1,6 @@
 package run.ecommerce.m2csl.section.directory
 
 import jakarta.enterprise.context.ApplicationScoped
-import jakarta.enterprise.inject.Default
-import jakarta.inject.Inject
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.encodeToJsonElement
@@ -11,7 +9,7 @@ import run.ecommerce.m2csl.section.GetSectionInterface
 
 
 @ApplicationScoped
-open class DirectoryConfig {
+class DirectoryConfig {
 
     var country: String = "US"
 //    @field:ConfigProperty(name = "directory.config.country", defaultValue = "US")

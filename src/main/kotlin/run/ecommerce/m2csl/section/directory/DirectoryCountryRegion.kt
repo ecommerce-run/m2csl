@@ -1,7 +1,6 @@
 package run.ecommerce.m2csl.section.directory
 
 import io.quarkus.hibernate.orm.panache.kotlin.*
-import io.quarkus.panache.common.Parameters
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
