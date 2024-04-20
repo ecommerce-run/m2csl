@@ -11,7 +11,7 @@ import run.ecommerce.m2csl.section.directory.DirectoryDataSection
 
 @Path("/customer/section/load")
 class CustomerSectionLoadController (
-    private val directoryDataSection: DirectoryDataSection
+    directoryDataSection: DirectoryDataSection
 ) {
 
 

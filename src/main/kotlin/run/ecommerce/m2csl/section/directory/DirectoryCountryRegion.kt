@@ -11,7 +11,7 @@ import jakarta.persistence.Table
 @Table(name = "directory_country_region")
 class DirectoryCountryRegion : PanacheEntityBase {
     companion object: PanacheCompanion<DirectoryCountryRegion> {
-        fun findByCountryCode(country_id: String) = list("countryId", country_id)
+        fun findByCountryCode(countryId: String) = list("countryId", countryId)
 
     }
     @Id

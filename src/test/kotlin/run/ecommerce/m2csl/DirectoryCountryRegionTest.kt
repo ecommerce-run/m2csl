@@ -10,7 +10,7 @@ class DirectoryCountryRegionTest {
 
     @Test
     fun testCountryRegion() {
-        var countryRegion  = DirectoryCountryRegion()
+        val countryRegion  = DirectoryCountryRegion()
         countryRegion.countryId = "US"
         countryRegion.code = "DE"
         countryRegion.defaultName = "Delaware"

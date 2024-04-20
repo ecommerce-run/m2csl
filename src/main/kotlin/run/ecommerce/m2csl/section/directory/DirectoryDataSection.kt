@@ -4,7 +4,6 @@ import jakarta.enterprise.context.ApplicationScoped
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.encodeToJsonElement
-import org.eclipse.microprofile.config.inject.ConfigProperty
 import run.ecommerce.m2csl.section.GetSectionInterface
 
 
@@ -26,9 +25,10 @@ class DirectoryDataSection(
     private val config: DirectoryConfig
 ) : GetSectionInterface {
 
-    val regions = DirectoryCountryRegion.findByCountryCode(config.country).map {
+    val regions = DirectoryCountryRegion.findByCountryCode(config.country).associate {
         it.regionId.toString() to Region(it.code, it.defaultName)
-    }.toMap()
+    }
+
     override fun getSection(sessionCookieValue: String?, currentTime: Long): JsonElement {
         val directoryData = DirectoryData(config.countryName, regions, currentTime)
         return Json.encodeToJsonElement(directoryData)
