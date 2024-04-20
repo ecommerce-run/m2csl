@@ -1,0 +1,8 @@
+
+quarkus:
+  datasource:
+    db-kind: mysql
+    username: root
+    password: verysecret
+    jdbc:
+      url: jdbc:mysql://centos.local:3307/mydatabase
