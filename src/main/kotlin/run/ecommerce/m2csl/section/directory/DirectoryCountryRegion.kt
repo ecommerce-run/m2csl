@@ -1,11 +1,7 @@
 package run.ecommerce.m2csl.section.directory
 
 import io.quarkus.hibernate.orm.panache.kotlin.*
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 @Entity
 @Table(name = "directory_country_region")
@@ -15,9 +11,9 @@ class DirectoryCountryRegion : PanacheEntityBase {
 
     }
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "region_id")
-    var regionId: Long = 0
+    var regionId: Int = 0
 
     @Column(name = "code")
     lateinit var code: String
